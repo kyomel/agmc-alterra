@@ -1,0 +1,697 @@
+{
+	"info": {
+		"_postman_id": "a4717aea-d177-4117-8b75-40205c79cd9a",
+		"name": "BinanceAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10995686"
+	},
+	"item": [
+		{
+			"name": "Get Account",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"const ts  = Date.now();",
+							"pm.environment.set(\"timestamp\", ts);",
+							" ",
+							"let paramsObject = {};",
+							" ",
+							"const binance_api_secret = pm.environment.get(\"api_secret\");",
+							" ",
+							"const parameters = pm.request.url.query;",
+							" ",
+							"parameters.map((param) => {",
+							"    if (param.key != 'signature' && ",
+							"        param.key != 'timestamp' && ",
+							"        !is_empty(param.value) &&",
+							"        !is_disabled(param.disabled)) {",
+							"            paramsObject[param.key] = param.value;",
+							"            //console.log(encodeURIComponent(param.value));",
+							"            //pm.environment.set(param.key, encodeURIComponent(param.value));",
+							"    }",
+							"})",
+							"        ",
+							"Object.assign(paramsObject, {'timestamp': ts});",
+							" ",
+							"if (binance_api_secret) {",
+							"    const queryString = Object.keys(paramsObject).map((key) => {",
+							"        return `${key}=${paramsObject[key]}`;",
+							"    }).join('&');",
+							"    console.log(queryString);",
+							"    const signature = CryptoJS.HmacSHA256(queryString, binance_api_secret).toString();",
+							"    pm.environment.set(\"signature\", signature);",
+							"}",
+							" ",
+							" ",
+							"function is_disabled(str) {",
+							"    return str == true;",
+							"}",
+							" ",
+							"function is_empty(str) {",
+							"    if (typeof str == 'undefined' ||",
+							"        !str || ",
+							"        str.length === 0 || ",
+							"        str === \"\" ||",
+							"        !/[^\\s]/.test(str) ||",
+							"        /^\\s*$/.test(str) ||",
+							"        str.replace(/\\s/g,\"\") === \"\")",
+							"    {",
+							"        return true;",
+							"    }",
+							"    else",
+							"    {",
+							"        return false;",
+							"    }",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-MBX-APIKEY",
+						"value": "{{api_key}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/v3/account?timestamp={{timestamp}}&signature={{signature}}",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v3",
+						"account"
+					],
+					"query": [
+						{
+							"key": "timestamp",
+							"value": "{{timestamp}}"
+						},
+						{
+							"key": "signature",
+							"value": "{{signature}}"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Account",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-MBX-APIKEY",
+								"value": "{{api_key}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v3/account?timestamp={{timestamp}}&signature={{signature}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v3",
+								"account"
+							],
+							"query": [
+								{
+									"key": "timestamp",
+									"value": "{{timestamp}}"
+								},
+								{
+									"key": "signature",
+									"value": "{{signature}}"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "254"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 13 Sep 2022 04:01:48 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "nginx"
+						},
+						{
+							"key": "x-mbx-uuid",
+							"value": "4d8ee4e2-e497-412b-839e-b6d5e6575b63"
+						},
+						{
+							"key": "x-mbx-used-weight",
+							"value": "10"
+						},
+						{
+							"key": "x-mbx-used-weight-1m",
+							"value": "10"
+						},
+						{
+							"key": "content-encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31536000; includeSubdomains"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "X-Xss-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self'"
+						},
+						{
+							"key": "X-Content-Security-Policy",
+							"value": "default-src 'self'"
+						},
+						{
+							"key": "X-WebKit-CSP",
+							"value": "default-src 'self'"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Cache",
+							"value": "Miss from cloudfront"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 b93b65cd05203b3d27cd7c90d92bdef4.cloudfront.net (CloudFront)"
+						},
+						{
+							"key": "X-Amz-Cf-Pop",
+							"value": "CGK50-P1"
+						},
+						{
+							"key": "X-Amz-Cf-Id",
+							"value": "gkJ22BzVWwbymvmLnRNShZs09Yrajtxk9BUZiFIOCMD6jJN4A6E_Ew=="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"makerCommission\": 0,\n    \"takerCommission\": 0,\n    \"buyerCommission\": 0,\n    \"sellerCommission\": 0,\n    \"canTrade\": true,\n    \"canWithdraw\": false,\n    \"canDeposit\": false,\n    \"brokered\": false,\n    \"updateTime\": 1662994906992,\n    \"accountType\": \"SPOT\",\n    \"balances\": [\n        {\n            \"asset\": \"BNB\",\n            \"free\": \"1000.00000000\",\n            \"locked\": \"0.00000000\"\n        },\n        {\n            \"asset\": \"BTC\",\n            \"free\": \"1.00000000\",\n            \"locked\": \"0.00000000\"\n        },\n        {\n            \"asset\": \"BUSD\",\n            \"free\": \"10000.00000000\",\n            \"locked\": \"0.00000000\"\n        },\n        {\n            \"asset\": \"ETH\",\n            \"free\": \"100.00000000\",\n            \"locked\": \"0.00000000\"\n        },\n        {\n            \"asset\": \"LTC\",\n            \"free\": \"500.00000000\",\n            \"locked\": \"0.00000000\"\n        },\n        {\n            \"asset\": \"TRX\",\n            \"free\": \"500000.00000000\",\n            \"locked\": \"0.00000000\"\n        },\n        {\n            \"asset\": \"USDT\",\n            \"free\": \"10000.00000000\",\n            \"locked\": \"0.00000000\"\n        },\n        {\n            \"asset\": \"XRP\",\n            \"free\": \"50000.00000000\",\n            \"locked\": \"0.00000000\"\n        }\n    ],\n    \"permissions\": [\n        \"SPOT\"\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Klines with one minute",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"const ts  = Date.now();",
+							"pm.environment.set(\"timestamp\", ts);",
+							" ",
+							"let paramsObject = {};",
+							" ",
+							"const binance_api_secret = pm.environment.get(\"api_secret\");",
+							" ",
+							"const parameters = pm.request.url.query;",
+							" ",
+							"parameters.map((param) => {",
+							"    if (param.key != 'signature' && ",
+							"        param.key != 'timestamp' && ",
+							"        !is_empty(param.value) &&",
+							"        !is_disabled(param.disabled)) {",
+							"            paramsObject[param.key] = param.value;",
+							"            //console.log(encodeURIComponent(param.value));",
+							"            //pm.environment.set(param.key, encodeURIComponent(param.value));",
+							"    }",
+							"})",
+							"        ",
+							"Object.assign(paramsObject, {'timestamp': ts});",
+							" ",
+							"if (binance_api_secret) {",
+							"    const queryString = Object.keys(paramsObject).map((key) => {",
+							"        return `${key}=${paramsObject[key]}`;",
+							"    }).join('&');",
+							"    console.log(queryString);",
+							"    const signature = CryptoJS.HmacSHA256(queryString, binance_api_secret).toString();",
+							"    pm.environment.set(\"signature\", signature);",
+							"}",
+							" ",
+							" ",
+							"function is_disabled(str) {",
+							"    return str == true;",
+							"}",
+							" ",
+							"function is_empty(str) {",
+							"    if (typeof str == 'undefined' ||",
+							"        !str || ",
+							"        str.length === 0 || ",
+							"        str === \"\" ||",
+							"        !/[^\\s]/.test(str) ||",
+							"        /^\\s*$/.test(str) ||",
+							"        str.replace(/\\s/g,\"\") === \"\")",
+							"    {",
+							"        return true;",
+							"    }",
+							"    else",
+							"    {",
+							"        return false;",
+							"    }",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-MBX-APIKEY",
+						"value": "{{api_key}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/v1/klines?interval={{interval}}&symbol={{symbol}}",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"klines"
+					],
+					"query": [
+						{
+							"key": "startTime",
+							"value": "{{startTime}}",
+							"disabled": true
+						},
+						{
+							"key": "endTime",
+							"value": "{{endTime}}",
+							"disabled": true
+						},
+						{
+							"key": "interval",
+							"value": "{{interval}}"
+						},
+						{
+							"key": "symbol",
+							"value": "{{symbol}}"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Klines with one minute",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-MBX-APIKEY",
+								"value": "{{api_key}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/klines?interval={{interval}}&symbol={{symbol}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"klines"
+							],
+							"query": [
+								{
+									"key": "startTime",
+									"value": "{{startTime}}",
+									"disabled": true
+								},
+								{
+									"key": "endTime",
+									"value": "{{endTime}}",
+									"disabled": true
+								},
+								{
+									"key": "interval",
+									"value": "{{interval}}"
+								},
+								{
+									"key": "symbol",
+									"value": "{{symbol}}"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "517"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 13 Sep 2022 04:01:56 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "nginx"
+						},
+						{
+							"key": "x-mbx-uuid",
+							"value": "4d8ee4e2-e497-412b-839e-b6d5e6575b63"
+						},
+						{
+							"key": "x-mbx-used-weight",
+							"value": "11"
+						},
+						{
+							"key": "x-mbx-used-weight-1m",
+							"value": "11"
+						},
+						{
+							"key": "content-encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31536000; includeSubdomains"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "X-Xss-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self'"
+						},
+						{
+							"key": "X-Content-Security-Policy",
+							"value": "default-src 'self'"
+						},
+						{
+							"key": "X-WebKit-CSP",
+							"value": "default-src 'self'"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Cache",
+							"value": "Miss from cloudfront"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 b93b65cd05203b3d27cd7c90d92bdef4.cloudfront.net (CloudFront)"
+						},
+						{
+							"key": "X-Amz-Cf-Pop",
+							"value": "CGK50-P1"
+						},
+						{
+							"key": "X-Amz-Cf-Id",
+							"value": "2rQLgykHrt_-vZ7zqk9OiZPTdTnGhDaXtxJA8oBJgvYWAk8WTlQ_MQ=="
+						}
+					],
+					"cookie": [],
+					"body": "[\n    [\n        1662508800000,\n        \"19107.80000000\",\n        \"50000.00000000\",\n        \"15668.40000000\",\n        \"19284.86000000\",\n        \"5892.50051000\",\n        1662595199999,\n        \"111900543.96863158\",\n        99487,\n        \"3814.98588700\",\n        \"72458500.50944591\",\n        \"0\"\n    ],\n    [\n        1662595200000,\n        \"19284.86000000\",\n        \"51515.51000000\",\n        \"10000.00000000\",\n        \"19318.60000000\",\n        \"9589.86613400\",\n        1662681599999,\n        \"184577414.34539109\",\n        164184,\n        \"6176.37829000\",\n        \"119046268.96659322\",\n        \"0\"\n    ],\n    [\n        1662681600000,\n        \"19319.16000000\",\n        \"50000.00000000\",\n        \"19292.36000000\",\n        \"21359.44000000\",\n        \"9717.73326700\",\n        1662767999999,\n        \"201541810.33605007\",\n        180115,\n        \"6374.39862600\",\n        \"132158089.00433518\",\n        \"0\"\n    ],\n    [\n        1662768000000,\n        \"21358.96000000\",\n        \"50011.00000000\",\n        \"20704.76000000\",\n        \"21647.46000000\",\n        \"7978.24451100\",\n        1662854399999,\n        \"170646351.15688002\",\n        158100,\n        \"5033.61231400\",\n        \"107681292.73798232\",\n        \"0\"\n    ],\n    [\n        1662854400000,\n        \"21647.41000000\",\n        \"22616.51000000\",\n        \"20442.08000000\",\n        \"21828.44000000\",\n        \"8079.44893600\",\n        1662940799999,\n        \"174535027.41524357\",\n        165518,\n        \"5132.06340100\",\n        \"110882249.82156384\",\n        \"0\"\n    ],\n    [\n        1662940800000,\n        \"21824.14000000\",\n        \"26645.73000000\",\n        \"21398.91000000\",\n        \"22395.45000000\",\n        \"8942.25782900\",\n        1663027199999,\n        \"197811128.29697466\",\n        193735,\n        \"5862.73591900\",\n        \"129675763.29010307\",\n        \"0\"\n    ],\n    [\n        1663027200000,\n        \"22395.92000000\",\n        \"50000.00000000\",\n        \"22004.50000000\",\n        \"22216.33000000\",\n        \"1505.41611500\",\n        1663113599999,\n        \"33452107.50142855\",\n        30603,\n        \"992.80384800\",\n        \"22060265.63991347\",\n        \"0\"\n    ]\n]"
+				}
+			]
+		},
+		{
+			"name": "Get Klines with day interval",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-MBX-APIKEY",
+						"value": "{{api_key}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/v1/klines?startTime={{startTime}}&endTime={{endTime}}&symbol={{symbol}}&interval={{interval}}",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"klines"
+					],
+					"query": [
+						{
+							"key": "startTime",
+							"value": "{{startTime}}"
+						},
+						{
+							"key": "endTime",
+							"value": "{{endTime}}"
+						},
+						{
+							"key": "symbol",
+							"value": "{{symbol}}"
+						},
+						{
+							"key": "interval",
+							"value": "{{interval}}"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Klines with day interval",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-MBX-APIKEY",
+								"value": "{{api_key}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/klines?startTime={{startTime}}&endTime={{endTime}}&symbol={{symbol}}&interval={{interval}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"klines"
+							],
+							"query": [
+								{
+									"key": "startTime",
+									"value": "{{startTime}}"
+								},
+								{
+									"key": "endTime",
+									"value": "{{endTime}}"
+								},
+								{
+									"key": "symbol",
+									"value": "{{symbol}}"
+								},
+								{
+									"key": "interval",
+									"value": "{{interval}}"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "182"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 13 Sep 2022 04:02:07 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "nginx"
+						},
+						{
+							"key": "x-mbx-uuid",
+							"value": "4d8ee4e2-e497-412b-839e-b6d5e6575b63"
+						},
+						{
+							"key": "x-mbx-used-weight",
+							"value": "1"
+						},
+						{
+							"key": "x-mbx-used-weight-1m",
+							"value": "1"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31536000; includeSubdomains"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "X-Xss-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self'"
+						},
+						{
+							"key": "X-Content-Security-Policy",
+							"value": "default-src 'self'"
+						},
+						{
+							"key": "X-WebKit-CSP",
+							"value": "default-src 'self'"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Cache",
+							"value": "Miss from cloudfront"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 b93b65cd05203b3d27cd7c90d92bdef4.cloudfront.net (CloudFront)"
+						},
+						{
+							"key": "X-Amz-Cf-Pop",
+							"value": "CGK50-P1"
+						},
+						{
+							"key": "X-Amz-Cf-Id",
+							"value": "yzukrRgzOSlwXSU2lk5Ij_feVvV6zt4Zcm2ssEwmohRf5M5CxcHxhw=="
+						}
+					],
+					"cookie": [],
+					"body": "[\n    [\n        1662508800000,\n        \"19107.80000000\",\n        \"50000.00000000\",\n        \"15668.40000000\",\n        \"19284.86000000\",\n        \"5892.50051000\",\n        1662595199999,\n        \"111900543.96863158\",\n        99487,\n        \"3814.98588700\",\n        \"72458500.50944591\",\n        \"0\"\n    ]\n]"
+				}
+			]
+		}
+	]
+}

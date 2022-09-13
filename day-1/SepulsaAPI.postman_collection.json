@@ -1,0 +1,530 @@
+{
+	"info": {
+		"_postman_id": "9342d787-4b7d-496c-9399-9b33209796d4",
+		"name": "SepulsaAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10995686"
+	},
+	"item": [
+		{
+			"name": "Get All Book",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://virtserver.swaggerhub.com/sepulsa/RentABook-API/1.0.0/book/1234",
+					"protocol": "https",
+					"host": [
+						"virtserver",
+						"swaggerhub",
+						"com"
+					],
+					"path": [
+						"sepulsa",
+						"RentABook-API",
+						"1.0.0",
+						"book",
+						"1234"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get All Book",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://virtserver.swaggerhub.com/sepulsa/RentABook-API/1.0.0/book/1234",
+							"protocol": "https",
+							"host": [
+								"virtserver",
+								"swaggerhub",
+								"com"
+							],
+							"path": [
+								"sepulsa",
+								"RentABook-API",
+								"1.0.0",
+								"book",
+								"1234"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 13 Sep 2022 03:58:20 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "149"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "X-Requested-With,Content-Type,Accept,Origin"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "Server",
+							"value": "Jetty(9.4.29.v20200521)"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"created_at\": \"2019-02-18T00:00:00\",\n    \"updated_at\": \"2019-02-18T00:00:00\",\n    \"deleted_at\": \"2019-02-18T00:00:00\",\n    \"id\": 1234,\n    \"title\": \"Judul Buku Satu\",\n    \"isbn\": \"1-234-5678-9101112-13\",\n    \"writer\": \"Dr. Who\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://virtserver.swaggerhub.com/sepulsa/RentABook-API/1.0.0/book/1234",
+					"protocol": "https",
+					"host": [
+						"virtserver",
+						"swaggerhub",
+						"com"
+					],
+					"path": [
+						"sepulsa",
+						"RentABook-API",
+						"1.0.0",
+						"book",
+						"1234"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get by ID",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://virtserver.swaggerhub.com/sepulsa/RentABook-API/1.0.0/book/1234",
+							"protocol": "https",
+							"host": [
+								"virtserver",
+								"swaggerhub",
+								"com"
+							],
+							"path": [
+								"sepulsa",
+								"RentABook-API",
+								"1.0.0",
+								"book",
+								"1234"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 13 Sep 2022 03:58:36 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "149"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "X-Requested-With,Content-Type,Accept,Origin"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "Server",
+							"value": "Jetty(9.4.29.v20200521)"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"created_at\": \"2019-02-18T00:00:00\",\n    \"updated_at\": \"2019-02-18T00:00:00\",\n    \"deleted_at\": \"2019-02-18T00:00:00\",\n    \"id\": 1234,\n    \"title\": \"Judul Buku Satu\",\n    \"isbn\": \"1-234-5678-9101112-13\",\n    \"writer\": \"Dr. Who\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Create Book",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Mari Ngoding\",\n    \"isbn\": \"1-234-5678-9101112-15\",\n    \"writer\": \"Dr. Kyomel\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://virtserver.swaggerhub.com/sepulsa/RentABook-API/1.0.0/book",
+					"protocol": "https",
+					"host": [
+						"virtserver",
+						"swaggerhub",
+						"com"
+					],
+					"path": [
+						"sepulsa",
+						"RentABook-API",
+						"1.0.0",
+						"book"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create Book",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Mari Ngoding\",\n    \"isbn\": \"1-234-5678-9101112-15\",\n    \"writer\": \"Dr. Kyomel\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://virtserver.swaggerhub.com/sepulsa/RentABook-API/1.0.0/book",
+							"protocol": "https",
+							"host": [
+								"virtserver",
+								"swaggerhub",
+								"com"
+							],
+							"path": [
+								"sepulsa",
+								"RentABook-API",
+								"1.0.0",
+								"book"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 13 Sep 2022 03:58:42 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "130"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "X-Requested-With,Content-Type,Accept,Origin"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "Server",
+							"value": "Jetty(9.4.29.v20200521)"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"created_at\": \"2019-02-18T00:00:00\",\n    \"updated_at\": \"2019-02-18T00:00:00\",\n    \"deleted_at\": \"2019-02-18T00:00:00\",\n    \"client_id\": 1234,\n    \"client_key\": \"CLIENT01\",\n    \"client_secret\": \"SECRET01\",\n    \"status\": true\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Book By ID",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Mari Ngoding\",\n    \"isbn\": \"1-234-5678-9101112-15\",\n    \"writer\": \"Dr. Kyomel\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://virtserver.swaggerhub.com/sepulsa/RentABook-API/1.0.0/book/1234",
+					"protocol": "https",
+					"host": [
+						"virtserver",
+						"swaggerhub",
+						"com"
+					],
+					"path": [
+						"sepulsa",
+						"RentABook-API",
+						"1.0.0",
+						"book",
+						"1234"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Update Book By ID",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Mari Ngoding\",\n    \"isbn\": \"1-234-5678-9101112-15\",\n    \"writer\": \"Dr. Kyomel\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://virtserver.swaggerhub.com/sepulsa/RentABook-API/1.0.0/book/1234",
+							"protocol": "https",
+							"host": [
+								"virtserver",
+								"swaggerhub",
+								"com"
+							],
+							"path": [
+								"sepulsa",
+								"RentABook-API",
+								"1.0.0",
+								"book",
+								"1234"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 13 Sep 2022 03:58:47 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "149"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "X-Requested-With,Content-Type,Accept,Origin"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "Server",
+							"value": "Jetty(9.4.29.v20200521)"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"created_at\": \"2019-02-18T00:00:00\",\n    \"updated_at\": \"2019-02-18T00:00:00\",\n    \"deleted_at\": \"2019-02-18T00:00:00\",\n    \"id\": 1234,\n    \"title\": \"Judul Buku Satu\",\n    \"isbn\": \"1-234-5678-9101112-13\",\n    \"writer\": \"Dr. Who\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Book By ID",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://virtserver.swaggerhub.com/sepulsa/RentABook-API/1.0.0/book/1234",
+					"protocol": "https",
+					"host": [
+						"virtserver",
+						"swaggerhub",
+						"com"
+					],
+					"path": [
+						"sepulsa",
+						"RentABook-API",
+						"1.0.0",
+						"book",
+						"1234"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete Book By ID",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://virtserver.swaggerhub.com/sepulsa/RentABook-API/1.0.0/book/1234",
+							"protocol": "https",
+							"host": [
+								"virtserver",
+								"swaggerhub",
+								"com"
+							],
+							"path": [
+								"sepulsa",
+								"RentABook-API",
+								"1.0.0",
+								"book",
+								"1234"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 13 Sep 2022 03:58:52 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "47"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "X-Requested-With,Content-Type,Accept,Origin"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "Server",
+							"value": "Jetty(9.4.29.v20200521)"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"deleted\"\n}"
+				}
+			]
+		}
+	]
+}
