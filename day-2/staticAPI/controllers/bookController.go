@@ -48,6 +48,8 @@ func UpdateBooksByID(c echo.Context) error {
 	}
 	id, _ := strconv.Atoi(c.Param("id"))
 	books[id].Title = b.Title
+	books[id].Isbn = b.Isbn
+	books[id].Writter = b.Writter
 	books[id].UpdatedAt = time.Now()
 	return c.JSON(http.StatusOK, books[id])
 }
