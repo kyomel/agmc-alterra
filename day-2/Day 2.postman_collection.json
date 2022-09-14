@@ -1,0 +1,763 @@
+{
+	"info": {
+		"_postman_id": "d2ea924b-2d7b-436c-82ee-7f77f7801f80",
+		"name": "Day 2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10995686"
+	},
+	"item": [
+		{
+			"name": "v1/books",
+			"item": [
+				{
+					"name": "{book id}",
+					"item": [
+						{
+							"name": "v1GetBookById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/v1/books/1",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"v1",
+										"books",
+										"1"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "v1GetBookById",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "localhost:8080/v1/books/1",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"v1",
+												"books",
+												"1"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 14 Sep 2022 12:07:17 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "182"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": 1,\n    \"created_at\": \"2022-09-14T19:07:02.280468406+07:00\",\n    \"updated_at\": \"2022-09-14T19:07:02.28046847+07:00\",\n    \"title\": \"Buku Melukis\",\n    \"isbn\": \"344-572-001\",\n    \"writter\": \"Francesca Vania\"\n}"
+								}
+							]
+						},
+						{
+							"name": "v1UpdateBookById",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"Melukis Buku Cinta\",\n    \"isbn\": \"344-572-001\",\n    \"writter\": \"Francesca Vania\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/v1/books/1",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"v1",
+										"books",
+										"1"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "v1UpdateBookById",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"title\": \"Melukis Buku Cinta\",\n    \"isbn\": \"344-572-001\",\n    \"writter\": \"Francesca Vania\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "localhost:8080/v1/books/1",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"v1",
+												"books",
+												"1"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 14 Sep 2022 12:07:31 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "189"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": 1,\n    \"created_at\": \"2022-09-14T19:07:02.280468406+07:00\",\n    \"updated_at\": \"2022-09-14T19:07:31.601208509+07:00\",\n    \"title\": \"Melukis Buku Cinta\",\n    \"isbn\": \"344-572-001\",\n    \"writter\": \"Francesca Vania\"\n}"
+								}
+							]
+						},
+						{
+							"name": "v1DeleteBookById",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/v1/books/1",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"v1",
+										"books",
+										"1"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "v1DeleteBookById",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "localhost:8080/v1/books/1",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"v1",
+												"books",
+												"1"
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "plain",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Wed, 14 Sep 2022 12:07:41 GMT"
+										}
+									],
+									"cookie": [],
+									"body": null
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "v1GetBooks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/v1/books",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"books"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "v1GetBooks",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/v1/books",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"v1",
+										"books"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 14 Sep 2022 12:07:11 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "188"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"1\": {\n        \"id\": 1,\n        \"created_at\": \"2022-09-14T19:07:02.280468406+07:00\",\n        \"updated_at\": \"2022-09-14T19:07:02.28046847+07:00\",\n        \"title\": \"Buku Melukis\",\n        \"isbn\": \"344-572-001\",\n        \"writter\": \"Francesca Vania\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "v1CreateBook",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Buku Melukis\",\n    \"isbn\": \"344-572-001\",\n    \"writter\": \"Francesca Vania\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/v1/books",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"books"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "v1CreateBook",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"Buku Melukis\",\n    \"isbn\": \"344-572-001\",\n    \"writter\": \"Francesca Vania\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/v1/books",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"v1",
+										"books"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 14 Sep 2022 12:07:02 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "182"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"created_at\": \"2022-09-14T19:07:02.280468406+07:00\",\n    \"updated_at\": \"2022-09-14T19:07:02.28046847+07:00\",\n    \"title\": \"Buku Melukis\",\n    \"isbn\": \"344-572-001\",\n    \"writter\": \"Francesca Vania\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "v1/users",
+			"item": [
+				{
+					"name": "{user id}",
+					"item": [
+						{
+							"name": "v1GetUserById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/v1/users/:id",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"v1",
+										"users",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "v1GetUserById",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "localhost:8080/v1/users/:id",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"v1",
+												"users",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "2"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 14 Sep 2022 12:03:08 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "196"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": {\n        \"ID\": 2,\n        \"CreatedAt\": \"2022-09-14T19:02:52.447+07:00\",\n        \"UpdatedAt\": \"2022-09-14T19:02:52.447+07:00\",\n        \"DeletedAt\": null,\n        \"fullname\": \"Anton Sutejo\",\n        \"email\": \"sutejo@mail.com\",\n        \"password\": \"1234\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "v1UpdateUserById",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"fullname\": \"Mamang Sunandar\",\n    \"email\": \"sunandar@mail.com\",\n    \"password\": \"1236\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/v1/users/:id",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"v1",
+										"users",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "v1UpdateUserById",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"fullname\": \"Mamang Sunandar\",\n    \"email\": \"sunandar@mail.com\",\n    \"password\": \"1236\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "localhost:8080/v1/users/:id",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"v1",
+												"users",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "2"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 14 Sep 2022 12:05:13 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "183"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": {\n        \"ID\": 0,\n        \"CreatedAt\": \"0001-01-01T00:00:00Z\",\n        \"UpdatedAt\": \"0001-01-01T00:00:00Z\",\n        \"DeletedAt\": null,\n        \"fullname\": \"Mamang Sunandar\",\n        \"email\": \"sunandar@mail.com\",\n        \"password\": \"1236\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "v1DeleteUserById",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/v1/users/:id",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"v1",
+										"users",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "v1DeleteUserById",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "localhost:8080/v1/users/:id",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"v1",
+												"users",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "2"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 14 Sep 2022 12:05:49 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "40"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Success Delete Data User!\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "v1GetUsers",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "tono@example.com",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/v1/users",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "v1GetUsers",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "tono@example.com",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:8080/v1/users",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"v1",
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 14 Sep 2022 12:02:57 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "384"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": [\n        {\n            \"ID\": 1,\n            \"CreatedAt\": \"2022-09-14T19:01:08.807+07:00\",\n            \"UpdatedAt\": \"2022-09-14T19:01:08.807+07:00\",\n            \"DeletedAt\": null,\n            \"fullname\": \"Francesca Vania\",\n            \"email\": \"vania@mail.com\",\n            \"password\": \"1234\"\n        },\n        {\n            \"ID\": 2,\n            \"CreatedAt\": \"2022-09-14T19:02:52.447+07:00\",\n            \"UpdatedAt\": \"2022-09-14T19:02:52.447+07:00\",\n            \"DeletedAt\": null,\n            \"fullname\": \"Anton Sutejo\",\n            \"email\": \"sutejo@mail.com\",\n            \"password\": \"1234\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "v1CreateUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fullname\": \"Anton Sutejo\",\r\n    \"email\": \"sutejo@mail.com\",\r\n    \"password\": \"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/v1/users",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "v1CreateUser",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"fullname\": \"Anton Sutejo\",\r\n    \"email\": \"sutejo@mail.com\",\r\n    \"password\": \"1234\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/v1/users",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"v1",
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 14 Sep 2022 12:02:52 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "178"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": {\n        \"ID\": 0,\n        \"CreatedAt\": \"0001-01-01T00:00:00Z\",\n        \"UpdatedAt\": \"0001-01-01T00:00:00Z\",\n        \"DeletedAt\": null,\n        \"fullname\": \"Anton Sutejo\",\n        \"email\": \"sutejo@mail.com\",\n        \"password\": \"1234\"\n    }\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:8080",
+			"type": "string"
+		}
+	]
+}
