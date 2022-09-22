@@ -1,0 +1,955 @@
+{
+	"info": {
+		"_postman_id": "dfa62c82-f9b2-465e-9d93-5dea696b69f5",
+		"name": "Day 3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10995686"
+	},
+	"item": [
+		{
+			"name": "v1/books",
+			"item": [
+				{
+					"name": "{book id}",
+					"item": [
+						{
+							"name": "v1GetBookById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/v1/books/:id",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"v1",
+										"books",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "v1GetBookById",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "localhost:8080/v1/books/:id",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"v1",
+												"books",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "1"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 16 Sep 2022 10:22:52 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "249"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"code\": 200,\n    \"status\": \"Success\",\n    \"message\": \"Success get data user by ID\",\n    \"result\": {\n        \"id\": 1,\n        \"title\": \"Melukis Bintang Update\",\n        \"isbn\": \"5662-572\",\n        \"writer\": \"Francesca Vania\",\n        \"created_at\": \"2022-09-16T17:14:09.198+07:00\",\n        \"updated_at\": \"0001-01-01T00:00:00Z\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "v1UpdateBookById",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE2NjMzMjUwMDUsInVzZXJJZCI6Nn0.Akdn6OqQqkAxFFLjohRluJtt12iRI0cmrq39q6N_YJY",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"Melukis Bintang Update\",\n    \"isbn\": \"5662-572\",\n    \"writer\": \"Francesca Vania\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/jwt/v1/books/:id",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"jwt",
+										"v1",
+										"books",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "v1UpdateBookById",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"title\": \"Melukis Bintang Update\",\n    \"isbn\": \"5662-572\",\n    \"writer\": \"Francesca Vania\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "localhost:8080/jwt/v1/books/:id",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"jwt",
+												"v1",
+												"books",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "1"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 16 Sep 2022 10:20:08 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "81"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"code\": 201,\n    \"status\": \"Success\",\n    \"message\": \"Success to update book\",\n    \"result\": null\n}"
+								}
+							]
+						},
+						{
+							"name": "v1DeleteBookById",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE2NjMzMjUyODUsInVzZXJJZCI6Nn0.NetN9JEwArt_Ll9TBMKg-VeIQxQw1YqbB-eBtPiFfhA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/jwt/v1/books/:id",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"jwt",
+										"v1",
+										"books",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "v1DeleteBookById",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "localhost:8080/jwt/v1/books/:id",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"jwt",
+												"v1",
+												"books",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "2"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 16 Sep 2022 10:19:06 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "83"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"code\": 200,\n    \"status\": \"Success\",\n    \"message\": \"Success data book delete\",\n    \"result\": null\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "v1GetBooks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/books",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"books"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "v1GetBooks",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/v1/books",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"v1",
+										"books"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 16 Sep 2022 10:21:07 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "542"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"status\": \"Success\",\n    \"message\": \"Success to get all book\",\n    \"result\": [\n        {\n            \"id\": 1,\n            \"title\": \"Melukis Bintang Update\",\n            \"isbn\": \"5662-572\",\n            \"writer\": \"Francesca Vania\",\n            \"created_at\": \"0001-01-01T00:00:00Z\",\n            \"updated_at\": \"0001-01-01T00:00:00Z\"\n        },\n        {\n            \"id\": 3,\n            \"title\": \"Melukis Bintang\",\n            \"isbn\": \"5662-572\",\n            \"writer\": \"Francesca Vania\",\n            \"created_at\": \"0001-01-01T00:00:00Z\",\n            \"updated_at\": \"0001-01-01T00:00:00Z\"\n        },\n        {\n            \"id\": 4,\n            \"title\": \"Melukis Bintang\",\n            \"isbn\": \"5662-572\",\n            \"writer\": \"Francesca Vania\",\n            \"created_at\": \"0001-01-01T00:00:00Z\",\n            \"updated_at\": \"0001-01-01T00:00:00Z\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "v1CreateBook",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Maling Kandang\",\n    \"writer\": \"John Doe\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/jwt/v1/books",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"jwt",
+								"v1",
+								"books"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "v1CreateBook",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"Melukis Bintang\",\n    \"isbn\": \"5662-572\",\n    \"writer\": \"Francesca Vania\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/jwt/v1/books",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"jwt",
+										"v1",
+										"books"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 16 Sep 2022 10:17:38 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "265"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 201,\n    \"status\": \"Success\",\n    \"message\": \"Success to create new book\",\n    \"result\": {\n        \"ID\": 4,\n        \"CreatedAt\": \"2022-09-16T17:17:38.137+07:00\",\n        \"UpdatedAt\": \"2022-09-16T17:17:38.137+07:00\",\n        \"DeletedAt\": null,\n        \"title\": \"Melukis Bintang\",\n        \"isbn\": \"5662-572\",\n        \"writer\": \"Francesca Vania\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "v1/users",
+			"item": [
+				{
+					"name": "{user id}",
+					"item": [
+						{
+							"name": "v1GetUserById",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE2NjMzMDg4NTUsInVzZXJJZCI6Nn0._LB2r1qYS8-Ez-AUwYN_L22HIvoFcbAkaJyNceDMgZQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/jwt/v1/users/:id",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"jwt",
+										"v1",
+										"users",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "v1GetUserById",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "localhost:8080/jwt/v1/users/:id",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"jwt",
+												"v1",
+												"users",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "5"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 16 Sep 2022 10:22:46 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "231"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"code\": 200,\n    \"status\": \"Success\",\n    \"message\": \"Success get data user by ID\",\n    \"result\": {\n        \"id\": 5,\n        \"fullname\": \"Francesca Vania\",\n        \"email\": \"vaniaupdate@mail.com\",\n        \"created_at\": \"2022-09-15T23:30:21.299+07:00\",\n        \"updated_at\": \"0001-01-01T00:00:00Z\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "v1UpdateUserById",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE2NjMzMDg4NTUsInVzZXJJZCI6Nn0._LB2r1qYS8-Ez-AUwYN_L22HIvoFcbAkaJyNceDMgZQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"fullname\": \"Francesca Vania\",\n    \"email\": \"vaniaupdate@mail.com\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/jwt/v1/users/:id",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"jwt",
+										"v1",
+										"users",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "v1UpdateUserById",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"fullname\": \"Francesca Vania\",\n    \"email\": \"vaniaupdate@mail.com\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "localhost:8080/jwt/v1/users/:id",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"jwt",
+												"v1",
+												"users",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "5"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 16 Sep 2022 05:45:45 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "79"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"code\": 400,\n    \"status\": \"failed\",\n    \"message\": \"Failed to update user\",\n    \"result\": null\n}"
+								}
+							]
+						},
+						{
+							"name": "v1DeleteUserById",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/jwt/v1/users/:id",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"jwt",
+										"v1",
+										"users",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "v1DeleteUserById",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "localhost:8080/jwt/v1/users/:id",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"jwt",
+												"v1",
+												"users",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "8"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 16 Sep 2022 10:18:23 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "83"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"code\": 200,\n    \"status\": \"Success\",\n    \"message\": \"Success data user delete\",\n    \"result\": null\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "v1GetUsers",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/jwt/v1/users",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"jwt",
+								"v1",
+								"users"
+							],
+							"query": [
+								{
+									"key": "keywords",
+									"value": "test2",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "v1GetUsers",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/jwt/v1/users",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"jwt",
+										"v1",
+										"users"
+									],
+									"query": [
+										{
+											"key": "keywords",
+											"value": "test2",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 16 Sep 2022 05:44:31 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1379"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"status\": \"Success\",\n    \"message\": \"Success to get all user\",\n    \"result\": [\n        {\n            \"id\": 1,\n            \"fullname\": \"Francesca Vania\",\n            \"email\": \"vania@mail.com\",\n            \"created_at\": \"2022-09-14T19:01:08.807+07:00\",\n            \"updated_at\": \"0001-01-01T00:00:00Z\"\n        },\n        {\n            \"id\": 3,\n            \"fullname\": \"Francesca Vania\",\n            \"email\": \"vania@mail.com\",\n            \"created_at\": \"2022-09-15T23:25:05.947+07:00\",\n            \"updated_at\": \"0001-01-01T00:00:00Z\"\n        },\n        {\n            \"id\": 4,\n            \"fullname\": \"Francesca Vania\",\n            \"email\": \"vania@mail.com\",\n            \"created_at\": \"2022-09-15T23:26:25.73+07:00\",\n            \"updated_at\": \"0001-01-01T00:00:00Z\"\n        },\n        {\n            \"id\": 5,\n            \"fullname\": \"Francesca Vania\",\n            \"email\": \"agus@mail.com\",\n            \"created_at\": \"2022-09-15T23:30:21.299+07:00\",\n            \"updated_at\": \"0001-01-01T00:00:00Z\"\n        },\n        {\n            \"id\": 6,\n            \"fullname\": \"Francesca Vania\",\n            \"email\": \"fvania@mail.com\",\n            \"created_at\": \"2022-09-16T08:23:29.817+07:00\",\n            \"updated_at\": \"0001-01-01T00:00:00Z\"\n        },\n        {\n            \"id\": 7,\n            \"fullname\": \"Francesca Vania\",\n            \"email\": \"fvania@mail.com\",\n            \"created_at\": \"2022-09-16T08:25:28.059+07:00\",\n            \"updated_at\": \"0001-01-01T00:00:00Z\"\n        },\n        {\n            \"id\": 8,\n            \"fullname\": \"Francesca Vania\",\n            \"email\": \"fvania@mail.com\",\n            \"created_at\": \"2022-09-16T08:27:46.073+07:00\",\n            \"updated_at\": \"0001-01-01T00:00:00Z\"\n        },\n        {\n            \"id\": 9,\n            \"fullname\": \"Francesca Vania\",\n            \"email\": \"fvania@mail.com\",\n            \"created_at\": \"2022-09-16T08:45:52.122+07:00\",\n            \"updated_at\": \"0001-01-01T00:00:00Z\"\n        },\n        {\n            \"id\": 10,\n            \"fullname\": \"Francesca Vania\",\n            \"email\": \"fvania@mail.com\",\n            \"created_at\": \"2022-09-16T12:41:10.344+07:00\",\n            \"updated_at\": \"0001-01-01T00:00:00Z\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "v1CreateUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\": \"1234\",\r\n    \"username\": \"test2\",\r\n    \"email\": \"test2@mail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/v1/users",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "v1CreateUser",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"fullname\": \"Francesca Vania\",\r\n    \"email\": \"fvania@mail.com\",\r\n    \"password\": \"12345\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/v1/users",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"v1",
+										"users"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 16 Sep 2022 05:41:10 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "335"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 201,\n    \"status\": \"Success\",\n    \"message\": \"Success to create new user\",\n    \"result\": {\n        \"ID\": 10,\n        \"CreatedAt\": \"2022-09-16T12:41:10.344+07:00\",\n        \"UpdatedAt\": \"2022-09-16T12:41:10.344+07:00\",\n        \"DeletedAt\": null,\n        \"fullname\": \"Francesca Vania\",\n        \"email\": \"fvania@mail.com\",\n        \"password\": \"$2a$14$7zITAHuFM/ToBIk.nJ75xe9PGeI1e5vUd9aqSrppPX9dgDCGassbe\",\n        \"token\": \"\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "v1Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"password\": \"1234\",\n    \"username\": \"test2\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/v1/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "v1Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"fvania@mail.com\",\n    \"password\": \"12345\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/v1/login",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"v1",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 16 Sep 2022 10:18:05 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "286"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"status\": \"Success\",\n    \"message\": \"Success Login\",\n    \"result\": {\n        \"id\": 6,\n        \"fullname\": \"Francesca Vania\",\n        \"email\": \"fvania@mail.com\",\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE2NjMzMjUyODUsInVzZXJJZCI6Nn0.NetN9JEwArt_Ll9TBMKg-VeIQxQw1YqbB-eBtPiFfhA\"\n    }\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:8080",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE2NjMyMjk5NjgsInVzZXJJZCI6Mn0.xqSMJhVWGujddxVRzxQQBCXtFuyfKh2YNL_nQQRYYuM",
+			"type": "string"
+		}
+	]
+}
