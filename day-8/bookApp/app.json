@@ -1,0 +1,12 @@
+{
+    "name": "Start on Heroku: Go",
+    "description": "Go Getting Started Example App",
+    "keywords": [
+      "getting-started",
+      "go",
+      "sample",
+      "example"
+    ],
+    "website": "https://github.com/kyomel/agmc-alterra/tree/master/day-9",
+    "repository": "https://github.com/titan2903/agmc-alterra/tree/master/day-9"
+}
